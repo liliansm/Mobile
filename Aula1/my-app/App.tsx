@@ -1,117 +1,131 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { Avatar} from "react-native-elements";
-import { Input } from "react-native-elements";
-import { Button } from "react-native-elements";
-
+import { Avatar, Input, Button } from "react-native-elements";
 
 function Login() {
   return (
-    <View style={styles.container}>
-      <Avatar
-        size="large"
-        rounded
-        icon={{ name: "user", type: "font-awesome" }}
-        source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg" }}
-      />
+    <View style={loginStyles.container}>
+      <View style={loginStyles.avatarContainer}>
+        <Avatar
+          size="large"
+          rounded
+          icon={{ name: "user", type: "font-awesome", color: "black" }}
+          source={{ uri: "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg" }}
+        />
+      </View>
 
       <Input
         label="Email"
-        containerStyle={styles.inputContainer}
-        inputStyle={styles.input}
+        labelStyle={loginStyles.label}
+        containerStyle={loginStyles.inputContainer}
+        inputStyle={loginStyles.input}
       />
-        <Input
+      <Input
         label="Senha"
-        containerStyle={styles.inputContainer}
-        inputStyle={styles.input}
+        labelStyle={loginStyles.label}
+        containerStyle={loginStyles.inputContainer}
+        inputStyle={loginStyles.input}
       />
 
       <Button
-      title="Logar"
-      buttonStyle={styles.button}
-      containerStyle={styles.buttonContainer}
+        title="Logar"
+        buttonStyle={loginStyles.button}
+        containerStyle={loginStyles.buttonContainer}
       />
       <Button
-      title="Cadastre-se"
-      buttonStyle={styles.button}
-      containerStyle={styles.buttonContainer}
+        title="Cadastre-se"
+        buttonStyle={loginStyles.button}
+        containerStyle={loginStyles.buttonContainer}
       />
 
-      <Text>Esqueceu a Senha</Text>
-
+      <Text style={loginStyles.text}>Esqueceu a Senha</Text>
     </View>
   );
 }
 
 function Cadastro() {
   return (
-    <View style={styles.container}>
-      
-      <Text>Cadastro</Text>
+    <View style={cadastroStyles.container}>
+      <View style={cadastroStyles.headerContainer}>
+        <Text style={cadastroStyles.headerTitle}>Cadastro</Text>
+      </View>
 
       <Input
-        label="nome"
-        containerStyle={styles.inputContainer}
-        inputStyle={styles.input}
+        label="Nome"
+        labelStyle={cadastroStyles.label}
+        containerStyle={cadastroStyles.inputContainer}
+        inputStyle={cadastroStyles.input}
       />
       <Input
         label="Email"
-        containerStyle={styles.inputContainer}
-        inputStyle={styles.input}
+        labelStyle={cadastroStyles.label}
+        containerStyle={cadastroStyles.inputContainer}
+        inputStyle={cadastroStyles.input}
       />
-        <Input
+      <Input
         label="Senha"
-        containerStyle={styles.inputContainer}
-        inputStyle={styles.input}
+        labelStyle={cadastroStyles.label}
+        containerStyle={cadastroStyles.inputContainer}
+        inputStyle={cadastroStyles.input}
       />
 
       <Button
-      title="Cadastrar"
-      buttonStyle={styles.button}
-      containerStyle={styles.buttonContainer}
+        title="Cadastrar"
+        buttonStyle={cadastroStyles.button}
+        containerStyle={cadastroStyles.buttonContainer}
       />
-
-
     </View>
   );
 }
 
 function EsqueceuSenha() {
   return (
-    <View style={styles.container}>
-      
-      <Text>Esqueceu a Senha</Text>
+    <View style={esqueceuSenhaStyles.container}>
+      <View style={esqueceuSenhaStyles.headerContainer}>
+        <Text style={esqueceuSenhaStyles.headerTitle}>Esqueceu a Senha</Text>
+      </View>
       
       <Input
         label="Email"
-        containerStyle={styles.inputContainer}
-        inputStyle={styles.input}
+        labelStyle={esqueceuSenhaStyles.label}
+        containerStyle={esqueceuSenhaStyles.inputContainer}
+        inputStyle={esqueceuSenhaStyles.input}
       />
 
       <Button
-      title="Enviar"
-      buttonStyle={styles.button}
-      containerStyle={styles.buttonContainer}
+        title="Enviar"
+        buttonStyle={esqueceuSenhaStyles.button}
+        containerStyle={esqueceuSenhaStyles.buttonContainer}
       />
-
-
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+
+const loginStyles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
-    padding: 20,
+    padding: 10,
+  },
+  avatarContainer: {
+    marginBottom: 40,
+    marginTop: 80,
   },
   inputContainer: {
     width: "80%",
     marginBottom: 15,
   },
   input: {
-    backgroundColor: "#adacaa",
+    backgroundColor: "#e3e1e1",
+    color: "black",
+  },
+  label: {
+    color: "black",
+  },
+  text: {
+    color: "black",
+    marginTop: 20,
   },
   button: {
     backgroundColor: "#149914",
@@ -122,7 +136,88 @@ const styles = StyleSheet.create({
     width: "80%",
     marginTop: 10,
   },
+});
 
+
+const cadastroStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+  },
+  headerContainer: {
+    width: '100%',
+    backgroundColor: '#e3e1e1',
+    paddingVertical: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 130,
+  },
+  headerTitle: {
+    color: "black",
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  inputContainer: {
+    width: "80%",
+   
+  },
+  input: {
+    backgroundColor: "#e3e1e1",
+    color: "black",
+  },
+  label: {
+    color: "black",
+  },
+  button: {
+    backgroundColor: "#149914",
+    paddingHorizontal: 30,
+    borderRadius: 20,
+  },
+  buttonContainer: {
+    width: "80%",
+    marginTop: 10,
+  },
+});
+
+
+const esqueceuSenhaStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+  },
+  headerContainer: {
+    width: '100%',
+    backgroundColor: '#e3e1e1',
+    paddingVertical: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 130 ,
+  },
+  headerTitle: {
+    color: "black",
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  inputContainer: {
+    width: "80%",
+    marginTop: 40,
+  },
+  input: {
+    backgroundColor: "#e3e1e1",
+    color: "black",
+  },
+  label: {
+    color: "black",
+  },
+  button: {
+    backgroundColor: "#149914",
+    paddingHorizontal: 30,
+    borderRadius: 20,
+  },
+  buttonContainer: {
+    width: "80%",
+    marginTop: 10,
+  },
 });
 
 export default Login;
